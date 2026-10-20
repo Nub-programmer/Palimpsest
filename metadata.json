@@ -1,0 +1,6 @@
+{
+  "name": "PALIMPSEST",
+  "description": "The Interface That Learns You. An award-quality adaptive investigative archive that reconstructs its layout and information architecture based on how you explore.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

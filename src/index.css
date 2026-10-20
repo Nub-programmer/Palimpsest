@@ -1,0 +1,468 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --canvas-bg: #F7F7F2;
+    --surface-white: #FFFFFF;
+    --ink-primary: #141414;
+    --ink-secondary: #42443F;
+    --ink-muted: #85877F;
+    --grid-line: #E6E6DF;
+    --border-structural: #171717;
+    --teal-signature: #087F82;
+    --teal-light: #0AB5B8;
+    --teal-hover: #06676A;
+    --teal-pale: #D9F0ED;
+    --panel-neutral: #F0F0E9;
+    --header-height: 76px;
+  }
+
+  body {
+    background-color: var(--canvas-bg);
+    color: var(--ink-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    image-rendering: pixelated;
+  }
+}
+
+/* Authentic Minecraft / Cryptix Block Typography */
+.font-display {
+  font-family: 'Pixelify Sans', 'Press Start 2P', sans-serif;
+  letter-spacing: -0.01em;
+  image-rendering: pixelated;
+}
+
+.font-pixel-arcade {
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: -0.04em;
+  image-rendering: pixelated;
+}
+
+.font-pixel-block {
+  font-family: 'Pixelify Sans', 'Press Start 2P', sans-serif;
+  letter-spacing: -0.01em;
+  image-rendering: pixelated;
+}
+
+.font-pixel {
+  font-family: 'Silkscreen', 'Press Start 2P', monospace;
+  image-rendering: pixelated;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+}
+
+.font-pixel-mono {
+  font-family: 'VT323', monospace;
+  font-size: 1.15em;
+  letter-spacing: 0.05em;
+  image-rendering: pixelated;
+}
+
+/* Graph paper & Minecraft voxel grid canvas */
+.bg-graph-paper {
+  background-color: #F7F7F2;
+  background-image: 
+    linear-gradient(to right, #E6E6DF 1px, transparent 1px),
+    linear-gradient(to bottom, #E6E6DF 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-graph-paper-fine {
+  background-color: #F7F7F2;
+  background-image: 
+    linear-gradient(to right, #EAEAE4 1px, transparent 1px),
+    linear-gradient(to bottom, #EAEAE4 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.bg-graph-paper-light {
+  background-color: #FFFFFF;
+  background-image: 
+    linear-gradient(to right, #EFEFE9 1px, transparent 1px),
+    linear-gradient(to bottom, #EFEFE9 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Block checkerboard subtle texture */
+.bg-voxel-grid {
+  background-color: #F7F7F2;
+  background-image: 
+    linear-gradient(45deg, #F0F0E9 25%, transparent 25%),
+    linear-gradient(-45deg, #F0F0E9 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #F0F0E9 75%),
+    linear-gradient(-45deg, transparent 75%, #F0F0E9 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+}
+
+/* Hard-offset tactile Minecraft-block shadows */
+.shadow-pixel-sm {
+  box-shadow: 2px 2px 0 #171717;
+}
+
+.shadow-pixel {
+  box-shadow: 4px 4px 0 #171717;
+}
+
+.shadow-pixel-lg {
+  box-shadow: 6px 6px 0 #171717;
+}
+
+.shadow-pixel-teal {
+  box-shadow: 4px 4px 0 #087F82;
+}
+
+.shadow-pixel-layered {
+  box-shadow: 2px 2px 0 #42443F, 4px 4px 0 #171717;
+}
+
+/* Minecraft Inset Inventory Slot */
+.pixel-slot {
+  background-color: #F0F0E9;
+  border: 2px solid #171717;
+  box-shadow: inset 2px 2px 0 #85877F, inset -2px -2px 0 #FFFFFF;
+}
+
+.pixel-slot-dark {
+  background-color: #141414;
+  border: 2px solid #171717;
+  box-shadow: inset 2px 2px 0 #000000, inset -2px -2px 0 #42443F;
+}
+
+/* Tactile button press effect - physical 2px voxel shift */
+.btn-tactile {
+  transition: transform 80ms steps(2), box-shadow 80ms steps(2);
+  user-select: none;
+}
+
+.btn-tactile:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 #171717;
+}
+
+.btn-tactile:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #171717;
+}
+
+/* Minecraft Button Bevel Style */
+.btn-minecraft {
+  border: 2px solid #171717;
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.7), inset -2px -2px 0 rgba(0, 0, 0, 0.35), 4px 4px 0 #171717;
+  transition: transform 80ms steps(2), box-shadow 80ms steps(2);
+}
+
+.btn-minecraft:hover {
+  transform: translate(1px, 1px);
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.9), inset -2px -2px 0 rgba(0, 0, 0, 0.4), 3px 3px 0 #171717;
+}
+
+.btn-minecraft:active {
+  transform: translate(3px, 3px);
+  box-shadow: inset -2px -2px 0 rgba(255, 255, 255, 0.4), inset 2px 2px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 #171717;
+}
+
+/* Minecraft block corner notches */
+.pixel-corners {
+  clip-path: polygon(
+    0 4px, 4px 4px, 4px 0,
+    calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px,
+    100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%,
+    4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px)
+  );
+}
+
+.pixel-corners-sm {
+  clip-path: polygon(
+    0 2px, 2px 2px, 2px 0,
+    calc(100% - 2px) 0, calc(100% - 2px) 2px, 100% 2px,
+    100% calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 100%,
+    2px 100%, 2px calc(100% - 2px), 0 calc(100% - 2px)
+  );
+}
+
+.pixel-corners-lg {
+  clip-path: polygon(
+    0 6px, 6px 6px, 6px 0,
+    calc(100% - 6px) 0, calc(100% - 6px) 6px, 100% 6px,
+    100% calc(100% - 6px), calc(100% - 6px) calc(100% - 6px), calc(100% - 6px) 100%,
+    6px 100%, 6px calc(100% - 6px), 0 calc(100% - 6px)
+  );
+}
+
+/* Minecraft experience-bar segmented fill */
+.minecraft-xp-bar {
+  background-color: #E6E6DF;
+  border: 2px solid #171717;
+  position: relative;
+  overflow: hidden;
+}
+
+.minecraft-xp-fill {
+  background-color: #087F82;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #087F82 0px,
+    #087F82 8px,
+    #0AB5B8 8px,
+    #0AB5B8 10px
+  );
+}
+
+/* ========================================================
+   PIXEL WORLD ANIMATIONS & KEYFRAMES (LIGHTWEIGHT, CSS-ONLY)
+   ======================================================== */
+
+/* 1. Low-cost slow pixel breathing animation */
+@keyframes pixelPulseSlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-pixel-pulse {
+  animation: pixelPulseSlow 2.4s steps(4, jump-none) infinite;
+}
+
+.animate-pixel-pulse-delayed {
+  animation: pixelPulseSlow 2.4s steps(4, jump-none) infinite 1.2s;
+}
+
+/* 2. Floating vertical pixel drift (Slow, staggered, pure CSS transforms) */
+@keyframes pixelDriftUpSlow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(6px, -24px, 0);
+  }
+  100% {
+    transform: translate3d(0, -48px, 0);
+  }
+}
+
+@keyframes pixelDriftDownSlow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-6px, 20px, 0);
+  }
+  100% {
+    transform: translate3d(0, 40px, 0);
+  }
+}
+
+@keyframes pixelHoverGentle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes pixelHoverSide {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(6px, -3px, 0);
+  }
+}
+
+.animate-pixel-drift-up {
+  animation: pixelDriftUpSlow 24s ease-in-out infinite alternate;
+}
+
+.animate-pixel-drift-down {
+  animation: pixelDriftDownSlow 28s ease-in-out infinite alternate;
+}
+
+.animate-pixel-float {
+  animation: pixelHoverGentle 6s steps(6) infinite;
+}
+
+.animate-pixel-float-side {
+  animation: pixelHoverSide 8s steps(6) infinite;
+}
+
+/* 3. Pixel Materialization (Discrete stepped fade-in, pause, dissolve) */
+@keyframes pixelMaterialize {
+  0%, 15% {
+    opacity: 0;
+    transform: translate3d(0, -4px, 0) scale(0.7);
+  }
+  25%, 75% {
+    opacity: 0.85;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  85%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 4px, 0) scale(0.7);
+  }
+}
+
+.animate-pixel-materialize {
+  animation: pixelMaterialize 12s steps(4) infinite;
+}
+
+.animate-pixel-materialize-delayed {
+  animation: pixelMaterialize 12s steps(4) infinite 6s;
+}
+
+/* 4. Subtle Teal Grid Sweep Across Background */
+@keyframes gridTealSweep {
+  0% {
+    opacity: 0.15;
+    transform: translate3d(-10%, 0, 0);
+  }
+  50% {
+    opacity: 0.45;
+    transform: translate3d(10%, 0, 0);
+  }
+  100% {
+    opacity: 0.15;
+    transform: translate3d(-10%, 0, 0);
+  }
+}
+
+.animate-grid-sweep {
+  animation: gridTealSweep 16s ease-in-out infinite;
+}
+
+/* 5. Insignia Assembly on Initial Page Entrance */
+@keyframes pixelInsigniaAssemble {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0) scale(0.92);
+  }
+  60% {
+    opacity: 0.9;
+    transform: translate3d(0, 2px, 0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-insignia-assemble {
+  animation: pixelInsigniaAssemble 0.75s steps(6) forwards;
+}
+
+/* 6. Clean Pixel Headline Entrance (Non-flickering, stepped reveal) */
+@keyframes pixelHeadlineEntrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-pixel-headline {
+  animation: pixelHeadlineEntrance 0.6s steps(4) forwards;
+}
+
+/* 7. Structural Form Layout Settling Transition */
+@keyframes pixelFormSettle {
+  0% {
+    opacity: 0.7;
+    transform: translate3d(0, 4px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-form-settle {
+  animation: pixelFormSettle 0.22s steps(3) forwards;
+}
+
+/* 8. Floating Pixel Toast / Micro-Action Feedback */
+@keyframes pixelBadgeFloat {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0) scale(0.9);
+  }
+  20% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0) scale(0.95);
+  }
+}
+
+.animate-pixel-toast {
+  animation: pixelBadgeFloat 2.2s steps(4) forwards;
+}
+
+/* 9. Active Nav Beacon */
+@keyframes pixelNavBeacon {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.65;
+  }
+}
+
+.animate-nav-beacon {
+  animation: pixelNavBeacon 1.8s steps(3) infinite;
+}
+
+/* Prefers-reduced-motion / accessibility override */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pixel-pulse,
+  .animate-pixel-pulse-delayed,
+  .animate-pixel-drift-up,
+  .animate-pixel-drift-down,
+  .animate-pixel-float,
+  .animate-pixel-float-side,
+  .animate-pixel-materialize,
+  .animate-pixel-materialize-delayed,
+  .animate-grid-sweep,
+  .animate-insignia-assemble,
+  .animate-pixel-headline,
+  .animate-form-settle,
+  .animate-nav-beacon {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Custom scrollbar with blocky thumb */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F0E9;
+  border-left: 2px solid #171717;
+  border-top: 2px solid #171717;
+}
+::-webkit-scrollbar-thumb {
+  background: #85877F;
+  border: 2px solid #171717;
+  box-shadow: inset 1px 1px 0 #FFFFFF, inset -1px -1px 0 #42443F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #087F82;
+}
